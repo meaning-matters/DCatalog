@@ -16,11 +16,13 @@ import CoreData
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        window = UIWindow(frame: UIScreen.main.bounds)
+        let context = persistentContainer.viewContext
+        let itemsViewController = ItemsViewController(itemSource: WebItemSource(),
+                                                      itemRepository: CoreDataItemRepository(context: context))
 
-        let itemsViewController = ItemsViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: itemsViewController)
-        self.window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
 
         return true
     }
@@ -58,16 +60,13 @@ import CoreData
 
     func applicationWillTerminate(_ application: UIApplication)
     {
-        // Called when the application is about to terminate. Save data if appropriate. See also
-        // applicationDidEnterBackground:.
-        //
-        // Saves changes in the application's managed object context before the application terminates.
-       // self.dataRepository.save()
+        saveContext()
     }
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentContainer =
+    {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -75,8 +74,10 @@ import CoreData
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentContainer(name: "DCatalog")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
+        container.loadPersistentStores(completionHandler:
+        { (storeDescription, error) in
+            if let error = error as NSError?
+            {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                  
@@ -91,17 +92,23 @@ import CoreData
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+
         return container
     }()
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext()
+    {
         let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
+        if context.hasChanges
+        {
+            do
+            {
                 try context.save()
-            } catch {
+            }
+            catch
+            {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
@@ -109,6 +116,4 @@ import CoreData
             }
         }
     }
-
 }
-
