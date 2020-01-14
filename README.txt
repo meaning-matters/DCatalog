@@ -1,4 +1,6 @@
 Remarks:
+- I've chosen not to add Carthage (i.e. Firebase) sources to the repository.
+
 - The certificate pulled from marlove.net is invalid and the CN does not match 
   (and is api.remotephone.app). For that reason I was unable to switch on SSL pinning.
   It is implemented, but currently disabled.
