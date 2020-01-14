@@ -112,7 +112,7 @@ class CoreDataTests: XCTestCase
         sut = nil
     }
 
-    func testAddUnique()
+    func test1AddUnique()
     {
         let item = ItemModel(id: "0000", imageBase64: ".", text: "item 0", confidence: 0.5)
         sut.addUnique(item: item)
@@ -127,7 +127,7 @@ class CoreDataTests: XCTestCase
         XCTAssertTrue(try mockPersistantContainer.viewContext.fetch(request).count == 1)
     }
 
-    func testDelete()
+    func test2Delete()
     {
         sut.deleteItem(with: "0001")
 
@@ -138,7 +138,7 @@ class CoreDataTests: XCTestCase
         XCTAssertTrue(sut.fetch(limit: 20).count == 14)
     }
 
-    func testFetch()
+    func test3Fetch()
     {
         XCTAssertTrue(sut.fetch(limit: 10).count == 10)
         XCTAssertTrue(sut.fetch(limit: 15).count == 15)
