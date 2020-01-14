@@ -7,5 +7,11 @@ Remarks:
   I've tried many things according to StackOverflow posts, but I seem to be
   running in circles.
 
-- I could have made tests of other parts of the app instead, but I'm running out of
-  time. If this work is not sufficent proof I'm worth it, then leave it.
+- I could have made tests of other parts of the app instead, but I'm severyl running 
+  out of time.
+
+- I've used protocols and dependency injected to allow testing using mocks/stubs.
+
+- I only use ItemModel objects instead of Core Data's Item to not pull in NSMangedObject
+  stuff into the class APIs. For this reason using a fetched results controller was not
+  (easily) possible.
