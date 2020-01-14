@@ -19,3 +19,9 @@ Remarks:
 - I'm aware that having to create images from data (Base64 string) every time is not
   efficient. An in-memory image cache (using `id` as key for example) could be added in
   case things get a little slow. 
+
+- Off course the current error messages are too low level to be shown to a user.
+
+- Also if SSL pinning fails it's advisable to divert the user (which might be a hacker)
+  by saying something generic (or completely different). Some argue that crashing the
+  production app in this situation is a good option.

@@ -63,6 +63,7 @@
 		4830A09623CCD03A0057DE7F /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		4830A09823CCD5DA0057DE7F /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		4830A0A123CD4F200057DE7F /* Certificates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
+		4853CB2B23CDC74F009FEA1C /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		48A2C5D423CA16F9007E5ACB /* DCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A2C5D723CA16F9007E5ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A2C5DB23CA16F9007E5ACB /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		48A2C5CB23CA16F9007E5ACB = {
 			isa = PBXGroup;
 			children = (
+				4853CB2B23CDC74F009FEA1C /* README.txt */,
 				48A2C5D623CA16F9007E5ACB /* DCatalog */,
 				48A2C5F023CA16FB007E5ACB /* DCatalogTests */,
 				4830A08023CA75370057DE7F /* Frameworks */,
