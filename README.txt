@@ -15,3 +15,7 @@ Remarks:
 - I only use ItemModel objects instead of Core Data's Item to not pull in NSMangedObject
   stuff into the class APIs. For this reason using a fetched results controller was not
   (easily) possible.
+
+- I'm aware that having to create images from data (Base64 string) every time is not
+  efficient. An in-memory image cache (using `id` as key for example) could be added in
+  case things get a little slow. 
